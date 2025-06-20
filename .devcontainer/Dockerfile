@@ -1,7 +1,7 @@
 FROM mcr.microsoft.com/devcontainers/java:17
-
 RUN apt-get update \
-  && apt-get install -y tesseract-ocr tesseract-ocr-por \
+  && apt-get install -y maven tesseract-ocr tesseract-ocr-por \
   && rm -rf /var/lib/apt/lists/*
 
-ENV TESSDATA_PREFIX=/usr/share/tesseract-ocr/4.00/tessdata
+# corrige o path para onde o por.traineddata foi instalado
+ENV TESSDATA_PREFIX=/usr/share/tesseract-ocr/5/tessdata
